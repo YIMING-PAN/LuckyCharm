@@ -219,4 +219,32 @@ body {
       text-align: center;
     }
   }
+
+  .lucky-charm-result {
+    background-image: url(/images/result/result-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 375px;
+    height: 667px;
+
+    img {
+      width: 100%;
+    }
+
+    &__university {
+      margin-top: 47px;
+      height: 96px;
+      width: 100%;
+    }
+    &__share {
+      width: 65px;
+      height: 37px;
+    }
+
+    &__save {
+      width: 180px;
+      height: 50px;
+    }
+  }
 }

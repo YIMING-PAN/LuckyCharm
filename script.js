@@ -1,14 +1,54 @@
 const faces = [
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/caixukun.png", alt: "xukun" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/guoqilin.png", alt: "qilin" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/leijiayin.png", alt: "jiayin" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/lisa.png", alt: "lisa" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/shenteng.png", alt: "shenteng" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/wangyibo.png", alt: "yibo" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/wuyifan.png", alt: "yifan" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/xiaozhan.png", alt: "xiaozhan" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/yangchaoyue.png", alt: "chaoyue" },
-  { src: "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/yiyangqianxi.png", alt: "qianxi" },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/caixukun.png",
+    alt: "xukun",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/guoqilin.png",
+    alt: "qilin",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/leijiayin.png",
+    alt: "jiayin",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/lisa.png",
+    alt: "lisa",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/shenteng.png",
+    alt: "shenteng",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/wangyibo.png",
+    alt: "yibo",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/wuyifan.png",
+    alt: "yifan",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/xiaozhan.png",
+    alt: "xiaozhan",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/yangchaoyue.png",
+    alt: "chaoyue",
+  },
+  {
+    src:
+      "https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/face/yiyangqianxi.png",
+    alt: "qianxi",
+  },
 ];
 
 function handleStart() {
@@ -22,10 +62,9 @@ function handleStart() {
   }
 
   function beginSpin() {
-    const sheet = new CSSStyleSheet();
     const degree = generateRandomRotateDeg();
-    sheet.insertRule(`#wheel {transform: rotate(${degree}deg)}`, 0);
-    document.adoptedStyleSheets = [sheet];
+    const wheel = document.getElementById("wheel");
+    wheel.setAttribute("style", `transform: rotate(${degree}deg);`);
   }
 
   function handleFaceChange() {

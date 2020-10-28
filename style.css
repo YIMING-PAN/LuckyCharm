@@ -256,5 +256,29 @@ body {
   height: 20px;
   text-align: center;
 }
+.container .lucky-charm-result {
+  background-image: url(/images/result/result-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  width: 375px;
+  height: 667px;
+}
+.container .lucky-charm-result img {
+  width: 100%;
+}
+.container .lucky-charm-result__university {
+  margin-top: 47px;
+  height: 96px;
+  width: 100%;
+}
+.container .lucky-charm-result__share {
+  width: 65px;
+  height: 37px;
+}
+.container .lucky-charm-result__save {
+  width: 180px;
+  height: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */
