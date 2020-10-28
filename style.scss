@@ -2,6 +2,43 @@
   box-sizing: border-box;
 }
 
+$theme-color-yellow: rgb(224, 194, 58);
+$theme-color-red: rgb(219, 110, 84);
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin transition($str) {
+  -webkit-transition: #{$str};
+  -moz-transition: #{$str};
+  -o-transition: #{$str};
+  -ms-transition: #{$str};
+  transition: #{$str};
+}
+
 body {
   background-color: #f9fafb;
   display: flex;
@@ -46,11 +83,7 @@ body {
       width: 302px;
       height: 329px;
 
-      -webkit-transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
-      -moz-transition: all 6 cubic-bezier(0, 0.99, 0.44, 0.99);
-      -o-transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
-      -ms-transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
-      transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
+      @include transition("all 6s ease-in");
 
       .university {
         position: absolute;
@@ -63,7 +96,6 @@ body {
         background-color: #fff;
         overflow: hidden;
         border: solid rgb(224, 194, 58) 3px;
-
         img {
           width: 100%;
         }
@@ -75,8 +107,8 @@ body {
       }
 
       .university:nth-child(2) {
-        top: 60px;
-        left: 230px;
+        top: 61px;
+        left: 231px;
         transform: rotate(60deg);
       }
 
@@ -106,10 +138,6 @@ body {
     }
 
     &__character {
-      background-image: url(https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/character.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100% 100%;
       position: absolute;
       display: flex;
       justify-content: center;
@@ -120,10 +148,14 @@ body {
       height: 377px;
 
       .character-face {
+        border-radius: 50%;
         position: absolute;
-        width: 65px;
-        top: 64px;
-        left: 133px;
+        overflow: hidden;
+        z-index: -1;
+        width: 75px;
+        height: 75px;
+        top: 53px;
+        left: 131px;
       }
     }
 
@@ -132,9 +164,51 @@ body {
       z-index: 2;
       margin: 343px 120px 0 140px;
       width: 115px;
+
       .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: transparent;
         border-color: transparent;
+        outline: none;
+
+        &__animation {
+          height: 125px;
+          width: 125px;
+          border-radius: 50%;
+          position: absolute;
+          right: -4px;
+          z-index: 3;
+          @include animation("light  2s  infinite  linear");
+        }
+      }
+
+      @include keyframes(light) {
+        0% {
+          transform: scale(0.7);
+          box-shadow: 0 0 40px $theme-color-yellow,
+            0 0 0px 10px $theme-color-red;
+          opacity: 1;
+        }
+        25% {
+          transform: scale(0.8);
+          box-shadow: 0 0 50px $theme-color-yellow,
+            0 0 20px 40px $theme-color-red;
+          opacity: 0.75;
+        }
+        50% {
+          transform: scale(0.8);
+          box-shadow: 0 0 60px $theme-color-yellow,
+            0 0 30px 60px $theme-color-red;
+          opacity: 0.25;
+        }
+        100% {
+          transform: scale(0.9);
+          box-shadow: 0 0 70px $theme-color-yellow,
+            0 0 40px 80px $theme-color-red;
+          opacity: 0;
+        }
       }
     }
 

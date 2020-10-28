@@ -43,11 +43,11 @@ body {
   margin: 14px 41px;
   width: 302px;
   height: 329px;
-  -webkit-transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
-  -moz-transition: all 6 cubic-bezier(0, 0.99, 0.44, 0.99);
-  -o-transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
-  -ms-transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
-  transition: all 6s cubic-bezier(0, 0.99, 0.44, 0.99);
+  -webkit-transition: all 6s ease-in;
+  -moz-transition: all 6s ease-in;
+  -o-transition: all 6s ease-in;
+  -ms-transition: all 6s ease-in;
+  transition: all 6s ease-in;
 }
 .container .lucky-charm__wheel .university {
   position: absolute;
@@ -69,8 +69,8 @@ body {
   left: 118px;
 }
 .container .lucky-charm__wheel .university:nth-child(2) {
-  top: 60px;
-  left: 230px;
+  top: 61px;
+  left: 231px;
   transform: rotate(60deg);
 }
 .container .lucky-charm__wheel .university:nth-child(3) {
@@ -94,10 +94,6 @@ body {
   transform: rotate(240deg);
 }
 .container .lucky-charm__character {
-  background-image: url(https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/character.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -108,10 +104,14 @@ body {
   height: 377px;
 }
 .container .lucky-charm__character .character-face {
+  border-radius: 50%;
   position: absolute;
-  width: 65px;
-  top: 64px;
-  left: 133px;
+  overflow: hidden;
+  z-index: -1;
+  width: 75px;
+  height: 75px;
+  top: 53px;
+  left: 131px;
 }
 .container .lucky-charm__button-container {
   position: absolute;
@@ -120,8 +120,135 @@ body {
   width: 115px;
 }
 .container .lucky-charm__button-container .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   border-color: transparent;
+  outline: none;
+}
+.container .lucky-charm__button-container .button__animation {
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  position: absolute;
+  right: -4px;
+  z-index: 3;
+  -webkit-animation: light  2s  infinite  linear;
+  -moz-animation: light  2s  infinite  linear;
+  -ms-animation: light  2s  infinite  linear;
+  -o-animation: light  2s  infinite  linear;
+  animation: light  2s  infinite  linear;
+}
+@-webkit-keyframes light {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 40px #e0c23a, 0 0 0px 10px #db6e54;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.8);
+    box-shadow: 0 0 50px #e0c23a, 0 0 20px 40px #db6e54;
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(0.8);
+    box-shadow: 0 0 60px #e0c23a, 0 0 30px 60px #db6e54;
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 70px #e0c23a, 0 0 40px 80px #db6e54;
+    opacity: 0;
+  }
+}
+@-moz-keyframes light {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 40px #e0c23a, 0 0 0px 10px #db6e54;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.8);
+    box-shadow: 0 0 50px #e0c23a, 0 0 20px 40px #db6e54;
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(0.8);
+    box-shadow: 0 0 60px #e0c23a, 0 0 30px 60px #db6e54;
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 70px #e0c23a, 0 0 40px 80px #db6e54;
+    opacity: 0;
+  }
+}
+@-ms-keyframes light {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 40px #e0c23a, 0 0 0px 10px #db6e54;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.8);
+    box-shadow: 0 0 50px #e0c23a, 0 0 20px 40px #db6e54;
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(0.8);
+    box-shadow: 0 0 60px #e0c23a, 0 0 30px 60px #db6e54;
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 70px #e0c23a, 0 0 40px 80px #db6e54;
+    opacity: 0;
+  }
+}
+@-o-keyframes light {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 40px #e0c23a, 0 0 0px 10px #db6e54;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.8);
+    box-shadow: 0 0 50px #e0c23a, 0 0 20px 40px #db6e54;
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(0.8);
+    box-shadow: 0 0 60px #e0c23a, 0 0 30px 60px #db6e54;
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 70px #e0c23a, 0 0 40px 80px #db6e54;
+    opacity: 0;
+  }
+}
+@keyframes light {
+  0% {
+    transform: scale(0.7);
+    box-shadow: 0 0 40px #e0c23a, 0 0 0px 10px #db6e54;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.8);
+    box-shadow: 0 0 50px #e0c23a, 0 0 20px 40px #db6e54;
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(0.8);
+    box-shadow: 0 0 60px #e0c23a, 0 0 30px 60px #db6e54;
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 70px #e0c23a, 0 0 40px 80px #db6e54;
+    opacity: 0;
+  }
 }
 .container .lucky-charm__description {
   margin: 0 auto;
