@@ -269,7 +269,7 @@ body {
   transition: opacity 200ms;
 }
 .container .lucky-charm #result .result-content {
-  background-image: url(/images/modal.png);
+  background-image: url(https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/modal.png);
   background-repeat: no-repeat;
   background-position: top;
   position: absolute;
@@ -306,7 +306,7 @@ body {
   opacity: 1;
 }
 .container .lucky-charm-result {
-  background-image: url(/images/result/result.png);
+  background-image: url(https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/result/result.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;

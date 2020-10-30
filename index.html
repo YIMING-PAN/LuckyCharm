@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="game">
       <div class="lucky-charm">
         <div class="lucky-charm__title">
           <img
@@ -72,10 +72,28 @@
         <div class="lucky-charm__description">
           <span>点击佛脚秒,求“逢考必过”符！</span>
         </div>
-        <a href="#result">Open</a>
-        <div clss="lucky-charm__result" id="result">
-          <div class="result-background"></div>
-          <div class="result-content" id="content"></div>
+      </div>
+    </div>
+    <div class="container" id="result" style="display: none">
+      <div class="lucky-charm-result">
+        <div class="lucky-charm-result__university">
+          <div class="university-container">
+            <div class="university-container__logo">
+              <img src="https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/university/ANU.png" />
+            </div>
+            <div class="university-container__name">ANU</div>
+            <div class="university-container__description">
+              恭喜你 {{count}} 号学员 获“逢考必过”符
+            </div>
+          </div>
+        </div>
+        <div class="lucky-charm-result__share">
+          <button class="button">
+            <img src="https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/result/share.png" />
+          </button>
+        </div>
+        <div class="lucky-charm-result__save">
+          <img src="https://raw.githubusercontent.com/YIMING-PAN/LuckyCharm/master/images/result/save.png" />
         </div>
       </div>
     </div>
